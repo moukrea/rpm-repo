@@ -1,11 +1,10 @@
 # moukrea/rpm-repo
 
-RPM package repository for opaq, hosted on GitHub Pages.
+RPM package repository for Fedora/RHEL/CentOS, hosted on GitHub Pages.
 
-## Installation
+## Adding the Repository
 
 ```bash
-# Add repository
 sudo tee /etc/yum.repos.d/moukrea.repo << 'EOF'
 [moukrea]
 name=moukrea Repository
@@ -14,19 +13,16 @@ gpgcheck=1
 gpgkey=https://moukrea.github.io/rpm-repo/pubkey.gpg
 enabled=1
 EOF
-
-# Install
-sudo dnf install opaq
 ```
 
-## Upgrade
+## Available Packages
+
+| Package | Description |
+|---------|-------------|
+| `opaq` | Credential manager — keeps secrets out of terminals, context windows, and command output |
+
+Install any package with:
 
 ```bash
-sudo dnf upgrade opaq
-```
-
-## Uninstall
-
-```bash
-sudo dnf remove opaq
+sudo dnf install <package-name>
 ```
